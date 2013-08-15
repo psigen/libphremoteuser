@@ -11,8 +11,8 @@ final class PhabricatorAuthProviderRemoteUser
 
   public function getDescriptionForCreate() {
     return pht(
-      'Configure a server to use web server built-in authentication '.
-      'for user credentials to log in to Phabricator.');
+      'Configure Phabricator to use your web server\'s built-in '.
+      'authentication as user credentials.');
   }
 
   public function getAdapter() {
