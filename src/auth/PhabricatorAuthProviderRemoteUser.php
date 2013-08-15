@@ -6,7 +6,7 @@ final class PhabricatorAuthProviderRemoteUser
   private $adapter;
 
   public function getProviderName() {
-    return pht('RemoteUser');
+    return pht('Web Server');
   }
 
   public function getDescriptionForCreate() {

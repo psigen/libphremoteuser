@@ -17,7 +17,7 @@ final class PhutilAuthAdapterRemoteUser extends PhutilAuthAdapter {
   }
 
   public function getAdapterType() {
-    return 'Apache';
+    return 'RemoteUser';
   }
 
   public function getAccountID() {
