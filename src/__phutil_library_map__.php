@@ -10,15 +10,15 @@ phutil_register_library_map(array(
   '__library_version__' => 2,
   'class' =>
   array(
-    'PhabricatorAuthProviderApache' => 'apacheauth/PhabricatorAuthProviderApache.php',
-    'PhutilAuthAdapterApache' => 'apacheauth/PhutilAuthAdapterApache.php',
+    'PhabricatorAuthProviderRemoteUser' => 'auth/PhabricatorAuthProviderRemoteUser.php',
+    'PhutilAuthAdapterRemoteUser' => 'auth/PhutilAuthAdapterRemoteUser.php',
   ),
   'function' =>
   array(
   ),
   'xmap' =>
   array(
-    'PhabricatorAuthProviderApache' => 'PhabricatorAuthProvider',
-    'PhutilAuthAdapterApache' => 'PhutilAuthAdapter',
+    'PhabricatorAuthProviderRemoteUser' => 'PhabricatorAuthProvider',
+    'PhutilAuthAdapterRemoteUser' => 'PhutilAuthAdapter',
   ),
 ));

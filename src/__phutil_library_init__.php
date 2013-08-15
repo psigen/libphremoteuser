@@ -1,3 +1,3 @@
 <?php
 
-phutil_register_library('libphapacheauth', __FILE__);
+phutil_register_library('libphremoteuser', __FILE__);
