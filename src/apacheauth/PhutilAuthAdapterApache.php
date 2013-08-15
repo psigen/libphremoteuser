@@ -24,4 +24,8 @@ final class PhutilAuthAdapterApache extends PhutilAuthAdapter {
     return $_SERVER['REMOTE_USER'];
   }
 
+  public function getAccountName() {
+    return $this->getAccountID();
+  }
+
 }

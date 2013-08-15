@@ -23,6 +23,10 @@ final class PhabricatorAuthProviderApache
     return $this->adapter;
   }
 
+  public function isLoginFormAButton() {
+    return true;
+  }
+
   protected function renderLoginForm(AphrontRequest $request, $mode) {
     $viewer = $request->getUser();
 
@@ -48,23 +52,7 @@ final class PhabricatorAuthProviderApache
         ->setSubtext($this->getProviderName());
 
     $content = array($button);
-    $adapter = $this->getAdapter();
-
-    $uri = new PhutilURI($adapter->getAuthenticateURI());
-    $params = $uri->getQueryParams();
-    $uri->setQueryParams(array());
-
-    $content = array($button);
-
-    foreach ($params as $key => $value) {
-      $content[] = phutil_tag(
-        'input',
-        array(
-          'type' => 'hidden',
-          'name' => $key,
-          'value' => $value,
-        ));
-    }
+    $uri = $this->getLoginURI();
 
     return phabricator_form(
       $viewer,
