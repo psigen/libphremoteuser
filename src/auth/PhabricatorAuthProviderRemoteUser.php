@@ -1,23 +1,23 @@
 <?php
 
-final class PhabricatorAuthProviderApache
+final class PhabricatorAuthProviderRemoteUser
   extends PhabricatorAuthProvider {
 
   private $adapter;
 
   public function getProviderName() {
-    return pht('Apache');
+    return pht('RemoteUser');
   }
 
   public function getDescriptionForCreate() {
     return pht(
-      'Configure a server to use Apache authentication for user'.
-      'credentials to log in to Phabricator.');
+      'Configure a server to use web server built-in authentication '.
+      'for user credentials to log in to Phabricator.');
   }
 
   public function getAdapter() {
     if (!$this->adapter) {
-      $adapter = new PhutilAuthAdapterApache();
+      $adapter = new PhutilAuthAdapterRemoteUser();
       $this->adapter = $adapter;
     }
     return $this->adapter;
@@ -82,7 +82,7 @@ final class PhabricatorAuthProviderApache
       $response = $controller->buildProviderErrorResponse(
         $this,
         pht(
-          'The Apache provider failed to retrieve an account ID.'));
+          'The web server failed to provide an account ID.'));
 
       return array($account, $response);
     }

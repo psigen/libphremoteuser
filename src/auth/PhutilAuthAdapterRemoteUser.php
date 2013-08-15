@@ -1,14 +1,14 @@
 <?php
 
-final class PhutilAuthAdapterApache extends PhutilAuthAdapter {
+final class PhutilAuthAdapterRemoteUser extends PhutilAuthAdapter {
 
   public function getProviderName() {
-    return pht('Apache');
+    return pht('RemoteUser');
   }
 
   public function getDescriptionForCreate() {
     return pht(
-      'Configure a connection to use Apache for authentication '.
+      'Configure a connection to use web server authentication '.
       'credentials to log in to Phabricator.');
   }
 
