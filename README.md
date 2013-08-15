@@ -36,7 +36,9 @@ Security
 --------
 
 I make no guarantees about this library being totally secure.  It's not __obviously__ insecure.  
+However, please make sure to at least 
+**REDIRECT THE LOGIN URI TO SSL, OTHERWISE YOU ARE SENDING PLAIN TEXT PASSWORDS**
 
 If you care about security consider:
-  * Redirecting the login URI to https, and ONLY allowing any access through SSL.  **OTHERWISE YOU ARE SENDING PASSWORDS IN PLAINTEXT.**
+  * Hosting Phabricator entirely on https/SSL
   * Restricting access to the whole Phabricator installation directory, also using SSL.
