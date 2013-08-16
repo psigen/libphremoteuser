@@ -42,7 +42,7 @@ Security
 
 I make no guarantees about this library being totally secure.  It's not __obviously__ insecure.  
 However, please make sure to at least 
-**REDIRECT THE LOGIN URI TO SSL, OTHERWISE YOU ARE SENDING PLAIN TEXT PASSWORDS**
+**REDIRECT THE LOGIN URI TO SSL, OTHERWISE YOU ARE SENDING PLAIN TEXT PASSWORDS.**
 
 If you care about security consider:
   * Hosting Phabricator entirely on https/SSL
