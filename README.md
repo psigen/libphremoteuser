@@ -26,11 +26,16 @@ In order to actually log in, your web server needs to populate the **$REMOTE_USE
 login button is pressed.  You can do this by forcing the login URI that Phabricator uses to be 
 restricted, by adding a directive like the following to your web server configuration (this is Apache2):
 
-    <Location "/auth/login/Apache:self/">
+    <Location "/auth/login/RemoteUser:self/">
       Authtype Basic
-      AuthName "Phabricator on My Server"
+      AuthName "Phabricator at My Server"
       Require valid-user
+      
+      Options None
+      Order allow,deny
+      Allow from all
     </Location>
+
 
 Security
 --------
