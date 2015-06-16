@@ -65,7 +65,7 @@ attributes appended to the `AuthLDAPUrl` directive, as explained in the
 [mod_authnz_ldap](http://httpd.apache.org/docs/current/mod/mod_authnz_ldap.html#exposed)
 [documentation](http://httpd.apache.org/docs/current/mod/mod_authnz_ldap.html#authldapurl).
 
-If you use LDAP for authorization rather than kerberos, the
+If you use LDAP for authentication rather than kerberos, the
 environment variables will start with `AUTHENTICATE_` instead of `AUTHORIZE_`, but you are probably better off using
 Phabricator's native LDAP auth provider in that case.
 
@@ -75,7 +75,7 @@ Security
 
 I make no guarantees about this library being totally secure.  It's not __obviously__ insecure.  
 However, please make sure to at least 
-**REDIRECT THE LOGIN URI TO SSL, OTHERWISE YOU ARE SENDING PLAIN TEXT PASSWORDS.**
+**REDIRECT THE LOGIN URI TO SSL, OTHERWISE YOU ARE POTENTIALLY SENDING PLAIN TEXT PASSWORDS.**
 
 If you care about security consider:
   * Hosting Phabricator entirely on https/SSL
