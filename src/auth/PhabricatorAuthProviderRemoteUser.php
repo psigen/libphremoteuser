@@ -86,7 +86,8 @@ final class PhabricatorAuthProviderRemoteUser
 
       return array($account, $response);
     }
+    $account = $this->newExternalAccountForIdentifiers($account_id);
 
-    return array($this->loadOrCreateAccount($account_id), $response);
+    return array($account, $response);
   }
 }
