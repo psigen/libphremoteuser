@@ -71,22 +71,17 @@ final class PhabricatorAuthProviderRemoteUser
     $account = null;
     $response = null;
 
-    try {
-      $account_id = $adapter->getAccountID();
-    } catch (Exception $ex) {
-      // TODO: Handle this in a more user-friendly way.
-      throw $ex;
-    }
-
-    if (!strlen($account_id)) {
+    $identifiers = $adapter->getAccountIdentifiers();
+    if (!$identifiers) {
       $response = $controller->buildProviderErrorResponse(
         $this,
         pht(
           'The web server failed to provide an account ID.'));
-
-      return array($account, $response);
     }
-
-    return array($this->loadOrCreateAccount($account_id), $response);
+    else {
+        $account = $this->newExternalAccountForIdentifiers($identifiers);
+    }
+ 
+    return array($account, $response);
   }
 }
